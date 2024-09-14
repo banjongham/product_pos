@@ -9,12 +9,16 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-//                 dir("/Users/macbook/project/deploy/product_pos") { //env
-                    dir("/Users/macbook/project/deploy/${BRANCH_NAME}/product_pos") { //env
+//                 dir("/Users/macbook/project/deploy/product_pos") {
+                    dir("/Users/macbook/project/deploy/${BRANCH_NAME}/product_pos") {
+                        sshagençt(['your-ssh-credentials-id']) {
+                            sh 'git pull'
+                        }
                         // Checkout code from the Git repository
 //                         git branch: 'master', url: 'https://github.com/your-username/your-repository.git'
                         echo 'Checkout...'
                         sh 'echo "Current dir: $(pwd)"'
+
         //              sh './build.sh'
                     }
                 }
