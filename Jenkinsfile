@@ -7,12 +7,14 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                // Checkout code from the Git repository
-//              git branch: 'main', url: 'https://github.com/your-username/your-repository.git'
-                echo 'Checkout...'
-                sh 'echo "Current dir: $(pwd)"'
-//              sh './build.sh'
+            dir('/Users/macbook/project/deploy/product_pos') {
+                steps {
+                    // Checkout code from the Git repository
+    //              git branch: 'main', url: 'https://github.com/your-username/your-repository.git'
+                    echo 'Checkout...'
+                    sh 'echo "Current dir: $(pwd)"'
+    //              sh './build.sh'
+                }
             }
         }
 
