@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Git Pull') {
             steps {
                 script {
 //                 dir("/Users/macbook/project/deploy/product_pos") {
@@ -27,6 +27,7 @@ pipeline {
             steps {
                 // Sample build command
                 echo 'Building...'
+                sh "mvn clean package"
             }
         }
 
@@ -46,6 +47,7 @@ pipeline {
             steps {
                 // Sample Deploy command
                 echo 'Deploy...'
+                sh "java -jar target/myapp.jar"
             }
         }
     }
