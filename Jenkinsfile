@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Checkout') {
             script {
-                dir('/Users/macbook/project/deploy/product_pos') {
+                dir("/Users/macbook/project/deploy/${BRANCH_NAME}/product_pos") { //env
+//                 dir("/Users/macbook/project/deploy/product_pos") { //env
                     steps {
                         // Checkout code from the Git repository
 //                         git branch: 'master', url: 'https://github.com/your-username/your-repository.git'
@@ -24,7 +25,6 @@ pipeline {
             steps {
                 // Sample build command
                 echo 'Building...'
-//              sh './build.sh'
             }
         }
 
@@ -32,14 +32,12 @@ pipeline {
             steps {
                 // Sample test command
                 echo 'Testing...'
-//              sh './test.sh'
             }
         }
-        stage('Test') {
+        stage('Deploy') {
             steps {
-                // Sample test command
-                echo 'Testing...'
-//              sh './test.sh'
+                // Sample Deploy command
+                echo 'Deploy...'
             }
         }
     }
