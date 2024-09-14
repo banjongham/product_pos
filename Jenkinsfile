@@ -7,10 +7,10 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            script {
-                dir("/Users/macbook/project/deploy/${BRANCH_NAME}/product_pos") { //env
+            steps {
+                script {
 //                 dir("/Users/macbook/project/deploy/product_pos") { //env
-                    steps {
+                    dir("/Users/macbook/project/deploy/${BRANCH_NAME}/product_pos") { //env
                         // Checkout code from the Git repository
 //                         git branch: 'master', url: 'https://github.com/your-username/your-repository.git'
                         echo 'Checkout...'
