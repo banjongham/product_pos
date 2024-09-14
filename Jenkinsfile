@@ -31,13 +31,13 @@ pipeline {
         }
 
         stage('Testing') {
-            steps {
             when {
                 allOf {
                     branch 'develop'
                     branch 'staging'
                 }
             }
+            steps {
             // Sample test command
             echo 'Testing...'
             }
