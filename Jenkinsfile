@@ -32,7 +32,7 @@ pipeline {
 
         stage('Testing') {
             when {
-                allOf {
+                anyOf {
                     branch 'develop'
                     branch 'staging'
                 }
