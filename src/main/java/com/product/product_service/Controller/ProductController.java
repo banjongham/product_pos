@@ -90,18 +90,18 @@ public class ProductController {
         return -1;
     }
 
-    @GetMapping(value = "/product")
-    public String getProduct() {
-        String url = "http://INVENTORY-SERVICE/products/inventory";
-        int inventory =  restTemplate.getForObject(url, Integer.class);
-        return "Server 1, SKU= 123, name=Soap, inventory = " + inventory;
-    }
-
-
-    @GetMapping("/search")
-    public ProductResponse getProductsByTypeAndName(@RequestParam(value = "sku") final String sku) {
-        String url = "http://INVENTORY-SERVICE/products/price?sku=" + sku;
-        return restTemplate.getForObject(url, ProductResponse.class);
-    }
+//    @GetMapping(value = "/product")
+//    public String getProduct() {
+//        String url = "http://INVENTORY-SERVICE/products/inventory";
+//        int inventory =  restTemplate.getForObject(url, Integer.class);
+//        return "Server 1, SKU= 123, name=Soap, inventory = " + inventory;
+//    }
+//
+//
+//    @GetMapping("/search")
+//    public ProductResponse getProductsByTypeAndName(@RequestParam(value = "sku") final String sku) {
+//        String url = "http://INVENTORY-SERVICE/products/price?sku=" + sku;
+//        return restTemplate.getForObject(url, ProductResponse.class);
+//    }
 
 }

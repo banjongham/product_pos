@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface CategoriesRepository extends JpaRepository<CategoriesEntity , Integer> {
 
-    Optional<CategoriesEntity> deleteByCategoriesName(String categoriesName);
+    //Optional<CategoriesEntity> deleteByCategoriesName(String categoriesName);
 }
