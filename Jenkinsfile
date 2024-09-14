@@ -27,7 +27,7 @@ pipeline {
             steps {
                 // Sample build command
                 echo 'Building...'
-                sh "mvn clean package"
+                sh "/opt/homebrew/Cellar/maven/3.9.9/mvn clean package"
             }
         }
 
