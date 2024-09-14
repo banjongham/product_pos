@@ -47,7 +47,7 @@ pipeline {
             steps {
                 // Sample Deploy command
                 echo 'Deploy...'
-                sh "java -jar target/myapp.jar"
+                sh "java -jar target/myapp.jar --spring.profiles.active=prod  > target/myapp.log 2>&1 "
             }
         }
     }
