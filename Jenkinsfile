@@ -11,7 +11,7 @@ pipeline {
                 dir('/Users/macbook/project/deploy/product_pos') {
                     steps {
                         // Checkout code from the Git repository
-                        git branch: 'master', url: 'https://github.com/your-username/your-repository.git'
+//                         git branch: 'master', url: 'https://github.com/your-username/your-repository.git'
                         echo 'Checkout...'
                         sh 'echo "Current dir: $(pwd)"'
         //              sh './build.sh'
