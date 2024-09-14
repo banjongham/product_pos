@@ -30,10 +30,16 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Testing') {
             steps {
-                // Sample test command
-                echo 'Testing...'
+            when {
+                allOf {
+                    branch 'develop'
+                    branch 'staging'
+                }
+            }
+            // Sample test command
+            echo 'Testing...'
             }
         }
         stage('Deploy') {
