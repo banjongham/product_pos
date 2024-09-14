@@ -27,7 +27,7 @@ pipeline {
             steps {
                 // Sample build command
                 echo 'Building...'
-                sh "mvn clean install"
+                sh "mvn clean package"
             }
         }
 
