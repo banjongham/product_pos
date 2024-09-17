@@ -143,7 +143,7 @@ public class CategoryService {
         }
         CategoriesCommonResponse categoriesCommonResponse = new CategoriesCommonResponse();
         try {
-            //categoriesRepository.deleteByCategoriesName(request.getCategoriesName());
+            categoriesRepository.deleteByCategoriesName(request.getCategoriesName());
 
             categoriesCommonResponse.setReturnCode("0001");
             categoriesCommonResponse.setReturnMessage("Delete Product Successful");

@@ -9,15 +9,10 @@ pipeline {
         stage('Git Pull') {
             steps {
                 script {
-//                 dir("/Users/macbook/project/deploy/product_pos") {
                     dir("/Users/macbook/project/deploy/${BRANCH_NAME}/product_pos") {
-//                      Checkout code from the Git repository
-//                         git branch: 'master', url: 'https://github.com/your-username/your-repository.git'
                         echo 'Checkout...'
                         sh "git pull"
                         sh 'echo "Current dir: $(pwd)"'
-
-        //              sh './build.sh'
                     }
                 }
             }
@@ -25,7 +20,6 @@ pipeline {
 
         stage('Build') {
             steps {
-                // Sample build command
                 echo 'Building...'
                 sh "/opt/homebrew/Cellar/maven/3.9.9/bin/mvn clean package"
             }
@@ -45,9 +39,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Sample Deploy command
                 echo 'Deploy...'
-                sh "java -jar target/myapp.jar --spring.profiles.active=prod  > target/myapp.log 2>&1"
+                sh "java -jar target/myapp.jar --spring.profiles.active=prod > target/myapp.log 2>&1"
             }
         }
     }
